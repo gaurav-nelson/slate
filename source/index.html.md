@@ -1,5 +1,20 @@
-Shotgun Python API3
-===================
+---
+title: Shotgun Python API Reference
+
+language_tabs: # must be one of https://git.io/vQNgJ
+  - python
+
+toc_footers:
+  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+
+includes:
+  - errors
+
+search: true
+---
+
+# Shotgun Python API3
 
 Release |version|. (Installation \<installation\>)
 
@@ -13,15 +28,16 @@ Because the needs of every studio can prove to be very different, we don't inclu
 
 In addition to basic metadata, the API contains methods for managing media including thumbnails, filmstrip thumbnails, images, uploaded, and both locally and remotely linked media like Quicktimes, etc.
 
-**Example**:
-
+> **Example**:
+```python
     sg = shotgun_api3.Shotgun("https://piedpiper.shotgunstudio.com",
                               login="rhendriks",
                               password="c0mPre$Hi0n")
     sg.find("Shot", filters=[["sg_status_list", "is", "ip"]], fields=["code", "sg_status_list"])
+```
 
-**Output**:
-
+> **Output**:
+```python
     [{'code': 'bunny_020_0170',
       'id': 896,
       'sg_sequence': {'id': 5, 'name': 'bunny_020', 'type': 'Sequence'},
@@ -37,4 +53,5 @@ In addition to basic metadata, the API contains methods for managing media inclu
       'sg_sequence': {'id': 6, 'name': 'bunny_030', 'type': 'Sequence'},
       'sg_status_list': 'ip',
       'type': 'Shot'}]
+```python
 
